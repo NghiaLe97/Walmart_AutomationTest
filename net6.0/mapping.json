@@ -1,0 +1,9 @@
+{
+    "dtcs": {
+        "Stored": "Confirmed",
+        "Pending": "Pending"
+    },
+    "freezeframe": {
+        "Calc Load": "Calculated Load"
+    }
+}
