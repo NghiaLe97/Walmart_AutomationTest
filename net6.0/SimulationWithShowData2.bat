@@ -1,0 +1,1 @@
+SimulatorTest.exe "COM32" "C:\Users\QuangMinh\PycharmProjects\AutomationTest_PassThru\Sim files\BMW\2011 BMW 3 Series 335i E90 L6, 3.0L_2_V0.14.sim" "showdata"

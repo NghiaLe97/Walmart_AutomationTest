@@ -1,0 +1,1 @@
+SimulatorTest.exe "COM32" "erasefw"

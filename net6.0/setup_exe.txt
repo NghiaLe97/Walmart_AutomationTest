@@ -1,0 +1,6 @@
+cd to folder
+
+run
+
+pyinstaller --onefile --windowed --icon=Logo.ico AutoTest_AllMakes.py
+
