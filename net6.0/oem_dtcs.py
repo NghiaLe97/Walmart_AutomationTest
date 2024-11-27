@@ -80,3 +80,33 @@ for filename in os.listdir(log_folder):
             else:
                 print(f"No matches found in {filename}")
 
+def compare_lists(system, sub_system, document, actual):
+    # Find elements in document that are not in actual
+    only_in_document = [item for item in document if item not in actual]
+
+    # Find elements in actual that are not in document
+    only_in_actual = [item for item in actual if item not in document]
+
+    # Find elements that are common in both lists
+    common_elements = [item for item in document if item in actual]
+
+
+    # Open the CSV file and write the results
+    with open(csv_file_path, 'a', newline='') as f:
+        writer = csv.writer(f)
+
+        # Write total number of elements in each list
+        new_row = [system, sub_system, 'total DTC/PIDs in document', len(document), 'total DTC/PIDs in actual', len(actual), 'NA']
+        writer.writerow(new_row)
+
+        # Write elements only found in document
+        for item in only_in_document:
+            writer.writerow([system, sub_system, item, 'null', 'null', 'null', 'Fail - only in document'])
+
+        # Write elements only found in actual
+        for item in only_in_actual:
+            writer.writerow([system, sub_system, 'null', 'null', item, 'null', 'Fail - only in app'])
+
+        # Write common elements
+        for item in common_elements:
+            writer.writerow([system, sub_system, item, 'null', item, 'null', 'Pass'])
